@@ -1,0 +1,20 @@
+{
+  "exports": [
+    {
+      "language": "en",
+      "platform":  "android",
+      "exportEmptyAs": "base",
+      "projectId": "41526497605e2bb0170e72.28979333",
+      "templatePath": "strings.xml.lokex",
+      "destinationPath": "../build/out/strings.xml"
+    },
+    {
+      "language": "nl",
+      "exportEmptyAs": "base",
+      "platform":  "android",
+      "projectId": "2862213666388ac951d2f4.77704933",
+      "templatePath": "StringsInterface.kt.lokex",
+      "destinationPath": "../build/out/StringsInterface.kt"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+<resources>
+    {%- for string in strings %}
+    {%- if "<" in string.value %}
+    <string name="{{ string.name.snake }}"><![CDATA[{{ string.value }}]]></string>
+    {%- else %}
+    <string name="{{ string.name.snake }}">"{{ string.value|escape_xml }}"</string>
+    {%- endif %}
+    {%- endfor %}
+    {%- for plural in plurals %}
+    <plurals name="{{ plural.name.snake }}">
+        {%- for variant in plural.variants %}
+        <item quantity="{{ variant.quantity }}">"{{ variant.value|escape_xml }}"</item>
+        {%- endfor %}
+    </plurals>
+    {%- endfor %}
+</resources>

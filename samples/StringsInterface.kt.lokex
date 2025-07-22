@@ -1,0 +1,29 @@
+package {{ package }}
+
+// ⚠️ Do not edit manual! Auto generated file
+// Run ./gradlew updateStrings to update
+//
+// This file was generated using LokEx at {{ date }}
+// Source project id: {{ lokalise.file }}
+// Source language: {{ lokalise.language }}
+//@formatter:off
+
+@Suppress("Unused")
+interface MyAppStrings {
+    {{ }}
+    {%- for string in strings -%}
+        {% if string.placeholders -%}
+    fun {{ string.name.camel }}(
+        {%- for placeholder in string.placeholders -%}
+            {{ placeholder.name.camel }}: {{ placeholder.type }}{{ ", " if not loop.last else "" }}
+        {%- endfor -%}
+    ): String = "{{ string.value|replace('$', '\\$')|replace("\n", "\\n") }}".format(
+        {%- for placeholder in string.placeholders -%}
+            {{ placeholder.name.camel }}{{ ", " if not loop.last else "" }}
+        {%- endfor -%}
+    )
+        {%- else -%}
+    val {{ string.name.camel }}: String get() = "{{ string.value|replace("\n", "\\n") }}"
+        {%- endif %}
+    {% endfor %}
+}
