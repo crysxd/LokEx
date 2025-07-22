@@ -35,7 +35,6 @@ import java.io.File
 private const val tag = "LokEx"
 
 
-@Suppress("Unused", "MemberVisibilityCanBePrivate")
 object LokEx {
 
     fun exportBlocking(

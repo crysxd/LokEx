@@ -2,6 +2,7 @@ package com.iodigital.lokex
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
+import com.iodigital.lokex.LokEx
 
 open class ExportLokaliseTask : DefaultTask() {
 
